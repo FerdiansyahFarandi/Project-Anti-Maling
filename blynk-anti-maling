@@ -1,0 +1,34 @@
+#include <ESP8266WiFi.h>
+#define BLYNK_PRINT Serial
+#include <BlynkSimpleEsp8266.h>
+#define trigPin 16
+#define echoPin 5
+char auth[] = "C6ordX_zbQZhqBkqyuvA-YHFdSjun3_U";
+char ssid[] = "";
+char pass[] = ""; 
+int ldrPin = 4;
+int ledPin1 = 0;
+int ledPin2 = 2;
+
+void setup() {
+pinMode(ledPin1, OUTPUT);
+pinMode(ldrPin,INPUT);
+pinMode(ledPin2,OUTPUT);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+pinMode(ldrPin, INPUT);
+Blynk.begin(auth, ssid, pass);
+}
+void loop() {
+Blynk.run();
+int duration, distance;
+      digitalWrite(trigPin, HIGH);
+       delayMicroseconds(10);
+         digitalWrite(trigPin, LOW);
+          duration  = pulseIn(echoPin, HIGH);
+           distance  = (duration/2)/29.1;
+int ldrStatus = analogRead(ldrPin);
+
+ digitalWrite(ledPin1, HIGH);
+      digitalWrite(ledPin2, HIGH);
+}
