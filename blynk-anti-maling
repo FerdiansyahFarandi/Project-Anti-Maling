@@ -3,7 +3,7 @@
 #include <BlynkSimpleEsp8266.h>
 #define trigPin 16
 #define echoPin 5
-char auth[] = "C6ordX_zbQZhqBkqyuvA-YHFdSjun3_U";
+char auth[] = "Char-Auth kalian";
 char ssid[] = "";
 char pass[] = ""; 
 int ldrPin = 4;
